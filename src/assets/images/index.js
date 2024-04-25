@@ -10,6 +10,24 @@ import works from '../images/works.svg'
 import peace from '../images/peace.svg'
 import driving from '../images/driving.svg'
 import join from '../images/join.svg'
+import logooffooter from '../images/logooffooter.svg'
+import instagram from '../images/instagram.svg'
+import facebook from '../images/facebook.svg'
+import twitter from '../images/twitter.svg'
+import linkdin from '../images/linkdin.svg'
+import other from '../images/other.svg'
+import futureof from '../images/futureof.svg'
+import blackimage from '../images/blackimage.svg'
+import coinimage from '../images/coinimage.svg'
+import gopay from '../images/gopay.svg'
+import paypal from '../images/paypal.svg'
+import paypal1 from '../images/paypal1.svg'
+import visa from '../images/visa.svg'
+import pay from '../images/pay.svg'
+
+
+
+
 
 
 const ICONS={
@@ -24,6 +42,23 @@ const ICONS={
     works,
     peace,
     driving,
-    join
+    join,
+    logooffooter,
+    instagram,
+    facebook,
+    twitter,
+    linkdin,
+    other,
+    futureof,
+    blackimage,
+    coinimage,
+    gopay,
+    paypal,
+    paypal1,
+    pay,
+    visa
+
+
+
 }
 export {ICONS};

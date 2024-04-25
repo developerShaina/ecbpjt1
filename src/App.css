@@ -6,10 +6,19 @@
 
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+ 
   text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .logo {
@@ -46,4 +55,30 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.main-container {
+  width: 1600px;
+  margin: -8rem;
+  text-align: center;
+  overflow: hidden;
+  padding-left: 150px;
+  margin-top: -19px;
+}
+.ecbcust {
+  padding: 84px;
+  margin-top: -70px;
+  margin-left: 50px;
+}
+.imagecust {
+  margin-left: -15px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin: -80px;
+  margin-top: 80px;
+  margin-left: 20px;
 }

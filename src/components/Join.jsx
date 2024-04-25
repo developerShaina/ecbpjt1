@@ -1,6 +1,6 @@
 
 import React from 'react';
-import '../assets/CSS/join.css';
+import '../assets/css/join.css'
 import { ICONS } from '../assets/images';
 
 function Join() {

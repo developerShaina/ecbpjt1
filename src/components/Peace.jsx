@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/CSS/peace.css';
+import '../assets/css/peace.css'
 import { ICONS } from '../assets/images';
 
 function Peace() {

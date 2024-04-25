@@ -1,0 +1,119 @@
+
+.container1 {
+    width: 450px;
+    height: 500px;
+    top: 1200.07px; 
+    right: 70px; 
+    border-radius: 40px; 
+    border: 1px solid #626ECA;
+    background-color: #626ECA;
+    padding: 10px;
+    border-color: #C5C5C5;
+    color: white;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    /* justify-content: center; */
+    /* gap: 20px; */
+  }
+  .container2 {
+    width: 450px;
+    height: 500px;
+    top: 1200.07px; 
+    right: 70px; 
+    border-radius: 40px; 
+    border: #F9FAFF;
+    background-color: #D6E1FF;
+    padding: 10px;
+    border-color: #C5C5C5;
+    color:black;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+  
+  }
+  
+  .for-borrow {
+    width: 308px;
+    height: 72px;
+    color: #626ECA;
+    margin-left: -143px;
+    top: 20pz;
+    /* margin-top: 47px; */
+    margin-top: 16px;
+  }
+  
+  .accordion {
+    width: 350px;
+    margin-bottom: 10px; 
+  }
+  
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+    margin-bottom: -100px;
+  }
+  
+  
+  .image-container img {
+    width: 450px; 
+    height: 500px;
+  }
+  
+  .borrow-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .get-started {
+    margin-top: 90px; 
+  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-box {
+    width: 250px;
+    height: 40px;
+  
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    padding: 0 15px;
+    margin-right: 10px;
+  }
+  
+  .get-started-button {
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  
+  
+  .arrow-symbol {
+    margin-left: 5px;
+  }
+  .frame-image {
+    width: 827px;
+    height: 923px;
+    top: 1689.93px;
+    left: 973.75px;
+    
+    border-radius: 40px;
+    margin-bottom: 10px; 
+  }
+  .fix{
+    justify-content: center;
+    gap: 20px;
+  }
+  

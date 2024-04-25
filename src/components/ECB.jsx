@@ -6,7 +6,7 @@ import { ICONS } from '../assets/images';
 function ECB() {
     return (
         <>
-        xcscd
+      
             <Typography.Title level={2} style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2rem' }}>
                 The ECB Advantage
             </Typography.Title>

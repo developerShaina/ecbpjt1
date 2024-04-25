@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/CSS/driving.css';
+import '../assets/css/driving.css'
 import { ICONS } from '../assets/images';
 
 function Driving() {
