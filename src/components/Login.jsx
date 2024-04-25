@@ -25,7 +25,7 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                         <Row>
                             <Col lg={7} className='d-flex align-items-center justify-content-center flex-column  gap-2 custPadding '>
                                 <div className='d-flex'>
-                                    <img className='ecb-image' src={ICONS. loginecb} alt="Image2" />
+                                    <img className='ecb-image' src={ICONS.loginecb} alt="Image2" />
                                     <img className="ecb" src={ICONS.logincontent} alt="Image" />
                                 </div>
                                 {activeForm === 'login' ? <>
