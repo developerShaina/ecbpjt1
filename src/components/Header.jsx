@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-// import { Button, Modal } from 'react-bootstrap';
-// import ecbSVG from '../assets/images/frame-223.svg';
-// import Login from './Login';
+import { ICONS } from '../assets/images';
+
+import { Button, Modal } from 'react-bootstrap';
+
+import Login from './Login';
 
 function Header() {
   const [showLogin, setShowLogin] = React.useState(false);
@@ -15,7 +17,7 @@ function Header() {
     <>
       <div className="header">
         <div className="header-left">
-          {/* <img src={ecbSVG} alt="ECB Logo" className="ecb-logo" /> */}
+          <img src={ICONS.headerlogo} alt="ECB Logo" className="ecb-logo" />
         </div>
         <div className="header-center">
    
