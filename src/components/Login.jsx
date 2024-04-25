@@ -1,7 +1,5 @@
 import React from 'react';
-import '../assets/css/login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '@fortawesome/fontawesome-free/css/all.css';
 import { Col, Modal, Row } from 'react-bootstrap';
 import CloseButton from 'react-bootstrap/CloseButton';
 import { faEnvelope, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +10,6 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
     const togglePasswordVisibility = () => {
         setPasswordVisibile(!passwordVisibile);
     };
-    console.log(activeForm);
     return (
         <>
             <Modal
@@ -28,8 +25,8 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                         <Row>
                             <Col lg={7} className='d-flex align-items-center justify-content-center flex-column  gap-2 custPadding '>
                                 <div className='d-flex'>
-                                    <img className='ecb-image' src={ICONS.logincontent} alt="Image2" />
-                                    <img className="ecb" src={ICONS.loginecb} alt="Image" />
+                                    <img className='ecb-image' src={ICONS. loginecb} alt="Image2" />
+                                    <img className="ecb" src={ICONS.logincontent} alt="Image" />
                                 </div>
                                 {activeForm === 'login' ? <>
                                     <h4 className="text-login">Login</h4>

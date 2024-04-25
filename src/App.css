@@ -1,5 +1,9 @@
-@import '../src/assets/css/header.css' ;
+@import '../src/assets/css/header.css';
 @import '../src/assets/css/login.css';
+@import '../src/assets/css/register.css';
+
+
+
 
 #root {
   max-width: 1280px;

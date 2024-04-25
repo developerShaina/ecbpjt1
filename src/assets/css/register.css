@@ -1,0 +1,180 @@
+
+.input-container {
+    position: relative;
+    display: flex;
+    font-size: 14px;
+    font-family: Helvetica;
+  }
+  
+  
+  
+  img.ecb1 {
+      width: 101px;
+      height: 60px;
+    }
+    
+    img.ecb-image1 {
+      width: 107.33px;
+      height: 60px;
+      gap: 0px;
+      opacity: 0px;
+    }
+    
+    .eye-icon {
+      cursor: pointer;
+    }
+  
+  button.signup-button1.text-white {
+      background-color: #eb8347;
+      height: 43px;
+      width: 180px;
+      border-radius: 5px;
+      margin-top: 10px; 
+  
+  }
+  
+  
+  
+  button.signup-button1.text-white {
+      background-color: #eb8347;
+      margin-left: 70px;
+  }
+  
+  
+  .text-white {
+      background-color: #eb8347;
+  }
+    
+    .modal-header1.modal-header {
+      border-bottom: none;
+    }
+  
+  
+    .customheader.modal-header {
+      border-bottom: none;
+  }
+    
+    .background-image-container1 {
+      position: relative;
+    }
+    
+    .background-image1 {
+      height: 500px;
+      width: 400px;
+    }
+    
+    .text-over-image1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+    
+    .text-over-image h5 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .text-over-image p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+  
+    
+    .grey-background1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 400px;
+      height: 500px;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    
+    input.input-field.email,
+    input.input-field.password,
+    input.input-field.confirmPassword,
+    input.input-field.dob,
+    select.input-field.gender {
+      height: 40px;
+    }
+    
+    .input-container {
+      position: relative;
+      margin-bottom: 10px; /* Adjust as needed */
+    }
+    
+   
+    
+    .input-with-icon {
+      position: relative;
+    }
+    
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #555;
+    }
+    
+    .input-field {
+      padding-left: 30px;
+    }
+    
+    .agree-terms {
+      font-size: 14px;
+    }
+    
+    .agree-terms-checkbox {
+      margin-right: 5px;
+    }
+    
+  
+  
+  .login-button1 {
+    height: 43px;
+    width: 180px;
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: #EB8347;
+    color: white;
+   
+  }
+  
+  h4.text-login1 {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+   
+  
+  .modalcust {
+    padding: 10px;
+    /* width: 100%; */
+  }
+  
+  
+  .input-container {
+    width: 100%;
+  }
+  
+  .input-label {
+    margin-right: 5px;
+  }
+  
+  .customimage {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    margin-top: 90px;
+  }
+  
+  

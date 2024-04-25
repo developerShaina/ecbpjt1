@@ -20,8 +20,6 @@ function Header() {
           <img src={ICONS.headerlogo} alt="ECB Logo" className="ecb-logo" />
         </div>
         <div className="header-center">
-   
-   
           MARKETPLACE
         </div>
         <div className="header-right">
