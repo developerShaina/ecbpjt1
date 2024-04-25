@@ -1,0 +1,93 @@
+.container7 {
+    background-color: #626ECA;
+    width: 90%;
+    height: 111vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    position: relative;
+    margin-left: 103px;
+    margin-bottom: 162px;
+    margin-top: -135px;
+  }
+    
+    .image {
+      width: 900px;
+      height: auto;
+      border-radius: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .text {
+      color: #FFFFFF;
+      font-size: 70px;
+      text-align: center;
+      position: absolute;
+      top: 70px;
+      left:35%;
+      transform: translateX(-50%);
+    }
+    
+    .content-right {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      width: 400px; 
+    }
+    
+    .step {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .step-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      margin-right: 10px;
+    }
+    
+    .step-content {
+      color: white;
+    }
+    
+    .step-content h2 {
+      margin-bottom: 5px;
+    }
+    
+    .step-content p {
+      font-size: 16px;
+      margin: 0;
+    }
+    .join-button {
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      margin-top: 30px;
+    }
+    
+   
+    
+    .join-now-button {
+      border: none;
+      border-radius: 20px;
+      background-color: white;
+      color: black; 
+      font-size: 16px;
+      padding: 10px 20px;
+   
+      align-items: center; 
+    }
+    
+    .join-now-button:hover {
+      background-color: #f0f0f0; 
+    }
+    
+    .arrow-symbol {
+      margin-left: 5px;
+      color: black; 
+    }
+    
+    

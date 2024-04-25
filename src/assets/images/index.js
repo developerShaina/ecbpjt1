@@ -6,6 +6,11 @@ import financial from '../images/financial.svg'
 import quickaccess from '../images/quickaccess.svg'
 import communitycentric from '../images/communitycentric.svg'
 import securetransaction from '../images/securetransaction.svg'
+import works from '../images/works.svg'
+import peace from '../images/peace.svg'
+import driving from '../images/driving.svg'
+import join from '../images/join.svg'
+
 
 const ICONS={
     headerlogo,
@@ -15,6 +20,10 @@ const ICONS={
     financial,
     securetransaction,
     quickaccess,
-    communitycentric
+    communitycentric,
+    works,
+    peace,
+    driving,
+    join
 }
 export {ICONS};
