@@ -1,20 +1,19 @@
 
 import React from 'react';
 import { Card, Typography } from 'antd';
-import Group427320401Image from '../assets/images/Group 427320401 (9).svg';
-import SecureTransactionsImage from '../assets/images/Group 427320401 (11).svg';
-import QuickAccessToFundsImage from '../assets/images/Group 427320401 (12).svg';
-import Group427320401Image14 from '../assets/images/Group 427320401 (14).svg';
+
+import { ICONS } from '../assets/images';
 function ECB() {
     return (
         <>
+        xcscd
             <Typography.Title level={2} style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2rem' }}>
                 The ECB Advantage
             </Typography.Title>
             <div className='ecbcust' style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <Card style={{ width: 400 }}>
                     <div className='imagecust' style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                        <img src={Group427320401Image} alt="Financial Inclusion" style={{ maxWidth: '100px' }} />
+                        <img src={ICONS.financial} alt="Financial Inclusion" style={{ maxWidth: '100px' }} />
                         <Typography.Title level={4}>Financial Inclusion</Typography.Title>
                     </div>
                     <Card.Meta
@@ -29,7 +28,7 @@ function ECB() {
                 </Card>
                 <Card style={{ width: 400 }}>
                     <div className='imagecust' style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                        <img src={SecureTransactionsImage} alt="Secure and transparent transactions" style={{ maxWidth: '100px' }} />
+                        <img src={ICONS.securetransaction} alt="Secure and transparent transactions" style={{ maxWidth: '100px' }} />
                         <Typography.Title level={4}>Secure and transparent transactions</Typography.Title>
                     </div>
                     <Card.Meta
@@ -45,7 +44,7 @@ function ECB() {
 
                 <Card style={{ width: 400 }}>
                     <div className='imagecust' style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                        <img src={QuickAccessToFundsImage} alt="Quick access to funds" style={{ maxWidth: '100px' }} />
+                        <img src={ICONS.quickaccess} alt="Quick access to funds" style={{ maxWidth: '100px' }} />
                         <Typography.Title level={4}>Quick access to funds</Typography.Title>
                     </div>
                     <Card.Meta
@@ -61,7 +60,7 @@ function ECB() {
 
                 <Card style={{ width: 400 }}>
                     <div  className='imagecust' style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                        <img src={Group427320401Image14} alt="Community-Centric Approach" style={{ maxWidth: '100px' }} />
+                        <img src={ICONS.communitycentric} alt="Community-Centric Approach" style={{ maxWidth: '100px' }} />
                         <Typography.Title level={4}>Community-Centric Approach</Typography.Title>
                     </div>
                     <Card.Meta
