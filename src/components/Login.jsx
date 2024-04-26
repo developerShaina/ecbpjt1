@@ -7,19 +7,14 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { ICONS } from '../assets/images';
 import OtpInput from 'react-otp-input';
-
 const Login = ({ setActiveForm, activeForm, ...props }) => {
     const [passwordVisibile, setPasswordVisibile] = useState(false);
     const [passwordVisibile2, setPasswordVisibile2] = useState(false);
     const [otp, setOtp] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm();
-
     const onSubmit = (data) => {
         console.log(data);
-
     };
-
-
     const validationRules = {
         fullName: {
             required: "Full Name is required"
@@ -55,29 +50,25 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
             required: "You must agree to the Terms of Service and Privacy Policy"
         }
     };
-
-
     const togglePasswordVisibility = () => {
         setPasswordVisibile(!passwordVisibile);
     };
     const togglePasswordVisibility2 = () => {
         setPasswordVisibile2(!passwordVisibile2);
     };
-
     return (
         <>
             <Modal
                 {...props}
                 show={props.showLogin}
-                size="lg"
+                size="xl"
                 onHide={props.handleClose}
-                aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <Modal.Body className='p-0'>
+                <Modal.Body className='w-auto'>
                     <>
-                        <Row>
-                            <Col lg={7} className='d-flex align-items-center justify-content-center flex-column  gap-2 custPadding '>
+                        <div className='auth-modal d-flex justify-content-center'>
+                            <div className='d-flex align-items-center justify-content-center flex-column w-100 gap-2 '>
                                 <div className='d-flex'>
                                     <img className='ecb-image' src={ICONS.loginecb} alt="Image2" />
                                     <img className="ecb" src={ICONS.logincontent} alt="Image" />
@@ -138,15 +129,13 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                     <div className='customDob'>
                                                         <label htmlFor="dob" className="input-label-cust1">Date of Birth:</label>
                                                         <input type="date" id="dob" className="input-field dob" />
-
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">        <label htmlFor="mobileNumber" className="input-label-cust2 ">Mobile Number:</label>
                                                     <div className="input-container">
                                                         <input type="tel" id="mobileNumber" className="input-field mobileNumber custominput inputFullName"
                                                             placeholder="+91 | Enter Mobile Number"  {...register("mobileNumber", validationRules.mobileNumber)} />
-                                                              {errors.mobileNumber && <span className="error-message-validationsLogin">{errors.mobileNumber.message}</span>}
-
+                                                        {errors.mobileNumber && <span className="error-message-validationsLogin">{errors.mobileNumber.message}</span>}
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">
@@ -162,7 +151,7 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                     <label htmlFor="confirmPassword" className="input-label-cust">Confirm Password:</label>
                                                     <div className="input-with-icon">
                                                         <FontAwesomeIcon icon={faLock} className="input-icon" />
-                                                        <input type={passwordVisibile2 ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password"  {...register("confirmPassword", validationRules.confirmPassword)}  />
+                                                        <input type={passwordVisibile2 ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password"  {...register("confirmPassword", validationRules.confirmPassword)} />
                                                         {errors.confirmPassword && <span className="error-message-validationsLogin">{errors.confirmPassword.message}</span>}
                                                         <FontAwesomeIcon icon={passwordVisibile2 ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility2} />
                                                     </div>
@@ -171,7 +160,9 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                     <input type="checkbox" id="agreeTerms" className="agree-terms-checkbox" />
                                                     <label htmlFor="agreeTerms" className="agree-terms">I agree to the Terms of Service and Privacy Policy.</label>
                                                 </div>
-                                                <button className="signup-button1 text-white" onClick={handleSubmit(onSubmit)}>Signup</button>
+                                                <div className='p-3 d-flex align-items-center justify-content-center'>
+                                                    <button className="signup-button1 text-white" onClick={handleSubmit(onSubmit)}>Signup</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </>
@@ -186,7 +177,9 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                         placeholder="+91 | Enter Mobile Number" />
                                                 </div>
                                             </div>
-                                            <button className="forgotPassword-button-custom text-white" onClick={() => setActiveForm('verification')}>Send OTP</button>
+                                            <div className='p-3 d-flex align-items-center justify-content-center'>
+                                                <button className="forgotPassword-button-custom text-white" onClick={() => setActiveForm('verification')}>Send OTP</button>
+                                            </div>
                                         </div>
                                     </>
                                 ) : activeForm === 'verification' ? (<>
@@ -194,7 +187,6 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                         <h4 className='custom-verify-heading'>Verification Code</h4>
                                         <p className='custom-content-verify'>Please enter the Verification code sent to +60 95989 51547 </p>
                                         <div className="custom-input-otp">
-
                                             <OtpInput
                                                 value={otp}
                                                 onChange={setOtp}
@@ -205,11 +197,11 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                 inputStyle="otp-input"
                                                 autoFocus={false}
                                             />
-
                                         </div>
-
-                                        <button className="sendotp2-button-custom text-white" onClick={() => setActiveForm('createPassword')}>Send OTP</button>
-                                        <p className='text-verify-custom'>Didn't receive code?</p>
+                                        <div className='p-3 d-flex align-items-center justify-content-center'>
+                                            <button className="sendotp2-button-custom text-white" onClick={() => setActiveForm('createPassword')}>Send OTP</button>
+                                        </div>
+                                        <p className='text-verify-custom'>{`Didn't receive code`}?</p>
                                         <p className='text-verify-custom'>Resend code in 55s</p>
                                     </div>
                                 </>) : activeForm === 'createPassword' ? (<>
@@ -232,17 +224,16 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                 <FontAwesomeIcon icon={passwordVisibile2 ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility2} />
                                             </div>
                                         </div>
-                                        <button className="submit-button-custom text-white">Submit</button>
-
+                                        <div className='p-3 d-flex align-items-center justify-content-center'>
+                                            <button className="submit-button-custom text-white">Submit</button>
+                                        </div>
                                     </div>
-
-
                                 </>) : null}
-                            </Col>
-                            <Col lg={5} className='p-0 d-flex align-items-center justify-content-center flex-column '>
+                            </div>
+                            <div className='p-0 w-100 d-flex align-items-center justify-content-center flex-column '>
                                 <div className="background-image-container">
                                     <CloseButton onClick={props.handleClose} />
-                                    <img className="background-image" src={ICONS.backgroundImage} alt="Background" />
+                                    <img className="background-image w-100 h-100" src={ICONS.backgroundImage} alt="Background" />
                                     {activeForm === 'login' || activeForm === 'forgetPassword' ? (<>
                                         <div className="text-over-image">
                                             <h5>New Here?</h5>
@@ -259,8 +250,8 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                     </>) : null}
                                     <div className="grey-background2"></div>
                                 </div>
-                            </Col>
-                        </Row>
+                            </div>
+                        </div>
                     </>
                 </Modal.Body>
             </Modal>

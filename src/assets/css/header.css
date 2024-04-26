@@ -1,155 +1,130 @@
-/* header.css */
+ /* header.css */
+ .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  /* Add the following styles */
+  flex-direction: row;
+}
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    /* Add the following styles */
-    flex-direction: row;
-  }
+.header-left {
+  display: flex;
+  align-items: center;
   
-  .header-left {
-    display: flex;
-    align-items: center;
-    
-    flex-direction: row;
-  }
-  .header-right {
-    margin-right: 67px;
+  flex-direction: row;
 }
-  
-  .horizontal-text {
-    font-size: 48px;
-    font-weight: bold;
-    color: #007bff;
-    
-   
-    display: inline-block;
-  }
-  
-  .vertical-text {
-    color: #ff7f50;
-    text-align: center;
-    margin-left: 10px;
-    display: inline-block;
-  }
-  .header-center {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 388px;
-    height: 75px;
-    background-color: #ff7f50;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .rectangle {
-    width: 392px;
-    height: 57px;
- 
-  }
-  img.ecb-logo {
-    height: 45px;
-    width: auto;
-    margin-left: 71px;
+.header-right {
+  margin-right: 67px;
 }
+
+.horizontal-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #007bff;
   
  
-  
-  
-    .btn-login,
-    .btn-register {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100px;
-      height: 50px; 
-    }
-    
-    .btn-login {
-      background-color: #fff;
-      color: #ff7f50;
-      margin-right: 10px;
-      border: 1px solid #ff7f50;
-      height: 46px;
-  }
-  
+  display: inline-block;
+}
+
+.vertical-text {
+  color: #ff7f50;
+  text-align: center;
+  margin-left: 10px;
+  display: inline-block;
+}
+.header-center {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 388px;
+  height: 75px;
+  background-color: #ff7f50;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.rectangle {
+  width: 392px;
+  height: 57px;
+
+}
+img.ecb-logo {
+  height: 45px;
+  width: auto;
+  margin-left: 71px;
+}
+
+
+
+
+  .btn-login,
   .btn-register {
-    background-color: #ff7f50;
-    color: #fff;
-    width: 113px;
-    height: 50px;
-    left: 1655px;
-    border-radius: 12px;
-    padding: 16px 32px;
-}
-
-  
-    .login-button{
-     
-background: #EB8347;
-
-
-    }
-
-    button.login-button {
-      width: 240px;
-  
-      height: 50px;
-      margin-top: 20px;
-      margin-left: 90px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px; 
   }
-
-   
-
-  .modal-content {
-    margin-top: 200px;
-    width: 600px;
-    height: 400px;
-    justify-content: center;
-    text-align: center;
-  padding: 40px;
-
+  
+  .btn-login {
+    background-color: #fff;
+    color: #ff7f50;
+    margin-right: 10px;
+    border: 1px solid #ff7f50;
+    height: 46px;
 }
 
+.btn-register {
+  background-color: #ff7f50;
+  color: #fff;
+  width: 113px;
+  height: 50px;
+  left: 1655px;
+  border-radius: 12px;
+  padding: 16px 32px;
+}
+
+  .login-button{
+   
+background: #EB8347;
+  }
+  button.login-button {
+    width: 240px;
+
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
 
 .login-container {
-  display: contents
+display: contents
 }
-
-
 button.login-button {
-  width: 70px;
-
+width: 70px;
 }
-
-
 img {
-  height: 60px;
-  width: 107px;
+height: 60px;
+width: 107px;
 }
-
 .custimage {
-  height: 100%;
-  width: 35%;
+height: 100%;
+width: 35%;
 }
-
 img.customImage {
-  height: 80%;
-  width: 35%;
+height: 80%;
+width: 35%;
 }
