@@ -3,13 +3,67 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Modal, Row } from 'react-bootstrap';
 import CloseButton from 'react-bootstrap/CloseButton';
 import { faEnvelope, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { ICONS } from '../assets/images';
+import OtpInput from 'react-otp-input';
+
 const Login = ({ setActiveForm, activeForm, ...props }) => {
     const [passwordVisibile, setPasswordVisibile] = useState(false);
+    const [passwordVisibile2, setPasswordVisibile2] = useState(false);
+    const [otp, setOtp] = useState('');
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+
+    };
+
+
+    const validationRules = {
+        fullName: {
+            required: "Full Name is required"
+        },
+        email: {
+            required: "Email is required",
+            pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email address"
+            }
+        },
+        gender: {
+            required: "Gender is required"
+        },
+        dob: {
+            required: "Date of Birth is required"
+        },
+        mobileNumber: {
+            required: "Mobile Number is required"
+        },
+        password: {
+            required: "Password is required",
+            minLength: {
+                value: 8,
+                message: "Password must be at least 8 characters long"
+            }
+        },
+        confirmPassword: {
+            required: "Confirm Password is required",
+            validate: value => value === password.current || "The passwords do not match"
+        },
+        agreeTerms: {
+            required: "You must agree to the Terms of Service and Privacy Policy"
+        }
+    };
+
+
     const togglePasswordVisibility = () => {
         setPasswordVisibile(!passwordVisibile);
     };
+    const togglePasswordVisibility2 = () => {
+        setPasswordVisibile2(!passwordVisibile2);
+    };
+
     return (
         <>
             <Modal
@@ -53,62 +107,71 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                 </> : activeForm === 'signup' ? (
                                     <>
                                         <div className='customFields'>
-                                            <h4 className="text-login1">Create an account</h4>
+                                            <h4 className="text-login-custom-1">Create an account</h4>
                                             <div className='modalcust7'>
                                                 <div className="input-container-cust">
                                                     <label htmlFor="fullName" className="input-label-cust">Full Name:</label>
                                                     <div className="input-container-cust">
-                                                        <input type="text" id="fullName" className="input-field fullName custominput inputFullName" placeholder="Enter Full Name" />
+                                                        {/* <input type="text" id="fullName" className="input-field fullName custominput inputFullName" placeholder="Enter Full Name" /> */}
+                                                        <input type="text" id="fullName" className="input-field fullName custominput inputFullName" placeholder="Enter Full Name" {...register("fullName", validationRules.fullName)} />
+                                                        {errors.fullName && <span className="error-message-validationsLogin">{errors.fullName.message}</span>}
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">
                                                     <label htmlFor="email" className="input-label-custommail">Email Id:</label>
                                                     <div className="input-with-icon">
                                                         <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
-                                                        <input type="email" id="email" className="input-field email custominput" placeholder="Enter Email" />
+                                                        <input type="email" id="email" className="input-field email custominput" placeholder="Enter Email" {...register("email", validationRules.email)} />
+                                                        {errors.email && <span className="error-message-validationsLogin">{errors.email.message}</span>}
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust1">
                                                     <div className='customGender'>
                                                         <label htmlFor="gender" className="input-label-cust1">Gender:</label>
                                                         <select id="gender" className="input-field gender">
-                                                            <option value="male">Male</option>
+                                                            <option value="male">Select</option>
                                                             <option value="female">Female</option>
+                                                            <option value="female">Male</option>
                                                             <option value="other">Other</option>
                                                         </select>
                                                     </div>
                                                     <div className='customDob'>
                                                         <label htmlFor="dob" className="input-label-cust1">Date of Birth:</label>
                                                         <input type="date" id="dob" className="input-field dob" />
+
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">        <label htmlFor="mobileNumber" className="input-label-cust2 ">Mobile Number:</label>
                                                     <div className="input-container">
                                                         <input type="tel" id="mobileNumber" className="input-field mobileNumber custominput inputFullName"
-                                                            placeholder="+91 | Enter Mobile Number" />
+                                                            placeholder="+91 | Enter Mobile Number"  {...register("mobileNumber", validationRules.mobileNumber)} />
+                                                              {errors.mobileNumber && <span className="error-message-validationsLogin">{errors.mobileNumber.message}</span>}
+
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">
                                                     <label htmlFor="password" className="input-label-cust">Password:</label>
                                                     <div className="input-with-icon">
                                                         <FontAwesomeIcon icon={faLock} className="input-icon" />
-                                                        <input type={passwordVisibile ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password" />
+                                                        <input type={passwordVisibile ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password"   {...register("password", validationRules.password)} />
+                                                        {errors.password && <span className="error-message-validationsLogin">{errors.password.message}</span>}
                                                         <FontAwesomeIcon icon={passwordVisibile ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility} />
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">
-                                                    <label htmlFor="confirmPassword" className="input-label-cust"> Password:</label>
+                                                    <label htmlFor="confirmPassword" className="input-label-cust">Confirm Password:</label>
                                                     <div className="input-with-icon">
                                                         <FontAwesomeIcon icon={faLock} className="input-icon" />
-                                                        <input type={passwordVisibile ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password" />
-                                                        <FontAwesomeIcon icon={passwordVisibile ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility} />
+                                                        <input type={passwordVisibile2 ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password"  {...register("confirmPassword", validationRules.confirmPassword)}  />
+                                                        {errors.confirmPassword && <span className="error-message-validationsLogin">{errors.confirmPassword.message}</span>}
+                                                        <FontAwesomeIcon icon={passwordVisibile2 ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility2} />
                                                     </div>
                                                 </div>
                                                 <div className="input-container-cust">
                                                     <input type="checkbox" id="agreeTerms" className="agree-terms-checkbox" />
                                                     <label htmlFor="agreeTerms" className="agree-terms">I agree to the Terms of Service and Privacy Policy.</label>
                                                 </div>
-                                                <button className="signup-button1 text-white">Signup</button>
+                                                <button className="signup-button1 text-white" onClick={handleSubmit(onSubmit)}>Signup</button>
                                             </div>
                                         </div>
                                     </>
@@ -123,28 +186,77 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                         placeholder="+91 | Enter Mobile Number" />
                                                 </div>
                                             </div>
-                                            <button className="forgotPassword-button-custom text-white">Send OTP</button>
+                                            <button className="forgotPassword-button-custom text-white" onClick={() => setActiveForm('verification')}>Send OTP</button>
                                         </div>
                                     </>
-                                ) : null}
+                                ) : activeForm === 'verification' ? (<>
+                                    <div className='custom-container-otp'>
+                                        <h4 className='custom-verify-heading'>Verification Code</h4>
+                                        <p className='custom-content-verify'>Please enter the Verification code sent to +60 95989 51547 </p>
+                                        <div className="custom-input-otp">
+
+                                            <OtpInput
+                                                value={otp}
+                                                onChange={setOtp}
+                                                numInputs={4}
+                                                renderSeparator={<span> </span>}
+                                                renderInput={(props) => <input type="tel" {...props} />}
+                                                containerStyle="otp-container"
+                                                inputStyle="otp-input"
+                                                autoFocus={false}
+                                            />
+
+                                        </div>
+
+                                        <button className="sendotp2-button-custom text-white" onClick={() => setActiveForm('createPassword')}>Send OTP</button>
+                                        <p className='text-verify-custom'>Didn't receive code?</p>
+                                        <p className='text-verify-custom'>Resend code in 55s</p>
+                                    </div>
+                                </>) : activeForm === 'createPassword' ? (<>
+                                    <div className='create-pasword-custom'>
+                                        <h4 className='custom-createPassword-heading'>Create new password</h4>
+                                        <p className='custom-content-createPassword'>Save the new password in safe place , if you forgot it then you have to do a forgot password again.</p>
+                                        <div className="input-container-cust-createPassword">
+                                            <label htmlFor="password" className="input-label-cust-createPassword">Create a new Password</label>
+                                            <div className="input-with-icon">
+                                                <FontAwesomeIcon icon={faLock} className="input-icon" />
+                                                <input type={passwordVisibile ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password" />
+                                                <FontAwesomeIcon icon={passwordVisibile ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility} />
+                                            </div>
+                                        </div>
+                                        <div className="input-container-cust-createPassword">
+                                            <label htmlFor="confirmPassword" className="input-label-cust-createPassword"> Confirm a new Password</label>
+                                            <div className="input-with-icon">
+                                                <FontAwesomeIcon icon={faLock} className="input-icon" />
+                                                <input type={passwordVisibile2 ? "text" : "password"} id="password" className="input-field password" placeholder="Enter Password" />
+                                                <FontAwesomeIcon icon={passwordVisibile2 ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility2} />
+                                            </div>
+                                        </div>
+                                        <button className="submit-button-custom text-white">Submit</button>
+
+                                    </div>
+
+
+                                </>) : null}
                             </Col>
                             <Col lg={5} className='p-0 d-flex align-items-center justify-content-center flex-column '>
                                 <div className="background-image-container">
                                     <CloseButton onClick={props.handleClose} />
                                     <img className="background-image" src={ICONS.backgroundImage} alt="Background" />
-                                    {activeForm === 'login' ? <>
+                                    {activeForm === 'login' || activeForm === 'forgetPassword' ? (<>
                                         <div className="text-over-image">
                                             <h5>New Here?</h5>
                                             <p>Unlocking Opportunities for Borrowers and Investors</p>
-                                            <button className="signup-button text-white" onClick={() => setActiveForm('signup')} >Signup</button>
+                                            <button className="signup-button-custom text-white" onClick={() => setActiveForm('signup')} >Signup</button>
                                         </div>
-                                    </> : (<>
+                                    </>
+                                    ) : activeForm === 'signup' || activeForm === 'verification' || activeForm === 'createPassword' ? (<>
                                         <div className="text-over-image1">
                                             <h5>Have an account?</h5>
                                             <p>Unlocking Opportunities for Borrowers and Investors</p>
                                             <button className="login-button1" onClick={() => setActiveForm('login')}>Login</button>
                                         </div>
-                                    </>)}
+                                    </>) : null}
                                     <div className="grey-background2"></div>
                                 </div>
                             </Col>

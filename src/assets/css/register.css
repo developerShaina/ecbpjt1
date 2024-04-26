@@ -4,6 +4,7 @@
     display: flex;
     font-size: 14px;
     font-family: Helvetica;
+    flex-direction: column;
   }
   
   
@@ -23,23 +24,7 @@
     .eye-icon {
       cursor: pointer;
     }
-  
-  button.signup-button1.text-white {
-      background-color: #eb8347;
-      height: 43px;
-      width: 180px;
-      border-radius: 5px;
-      margin-top: 10px; 
-  
-  }
-  
-  
-  
-  button.signup-button1.text-white {
-      background-color: #eb8347;
-      margin-left: 70px;
-  }
-  
+
   
   .text-white {
       background-color: #eb8347;
@@ -116,7 +101,7 @@
     
     .input-icon {
       position: absolute;
-      top: 50%;
+      top: 20px;
       left: 10px;
       transform: translateY(-50%);
       color: #555;
