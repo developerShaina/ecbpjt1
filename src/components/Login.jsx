@@ -7,14 +7,13 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { ICONS } from '../assets/images';
 import OtpInput from 'react-otp-input';
+import { message } from 'antd';
 const Login = ({ setActiveForm, activeForm, ...props }) => {
     const [passwordVisibile, setPasswordVisibile] = useState(false);
     const [passwordVisibile2, setPasswordVisibile2] = useState(false);
     const [otp, setOtp] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+
     const validationRules = {
         fullName: {
             required: "Full Name is required"
@@ -50,6 +49,19 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
             required: "You must agree to the Terms of Service and Privacy Policy"
         }
     };
+
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await axios.post("https://probable-phelia-ecb.koyeb.app/users/signup", data);
+            message.success("Registration successful!");
+            reset();
+
+        } catch (error) {
+            console.error("Registration error:", error);
+            message.error("Registration failed. Please try again.");
+        }
+    };
     const togglePasswordVisibility = () => {
         setPasswordVisibile(!passwordVisibile);
     };
@@ -79,14 +91,17 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                         <label htmlFor="email" className="input-label-cust">Email Id:</label>
                                         <div className="input-with-icon">
                                             <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
-                                            <input type="email" id="email" className="input-field email " placeholder="Enter Email" />
+                                            <input type="email" id="email" className="input-field email " placeholder="Enter Email"  {...register("email", validationRules.email)}/>
+                                             {errors.email && <span className="error-message-validationsLogin">{errors.email.message}</span>}
                                         </div>
                                     </div>
                                     <div className="input-container3">
                                         <label htmlFor="password" className="input-label-cust">Password:</label>
                                         <div className="input-with-icon">
                                             <FontAwesomeIcon icon={faLock} className="input-icon" />
-                                            <input type="password" id="password" className="input-field password" placeholder="Enter Password" />
+                                            <input type="password" id="password" className="input-field password" placeholder="Enter Password" {...register("password", validationRules.password)} />
+                                            {errors.password && <span className="error-message-validationsLogin">{errors.password.message}</span>}
+
                                         </div>
                                     </div>
                                     <a href="#" onClick={() => setActiveForm('forgetPassword')} className="forgot-password">Forgot Password?</a>
@@ -94,7 +109,7 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                         <input type="checkbox" id="rememberMe" className="remember-me-checkbox" />
                                         <label htmlFor="rememberMe" className="remember-me">Remember Me</label>
                                     </div>
-                                    <button className="login-button-custom text-white">Login</button>
+                                    <button className="login-button-custom text-white"onClick={handleSubmit(onSubmit)}>Login</button>
                                 </> : activeForm === 'signup' ? (
                                     <>
                                         <div className='customFields'>
@@ -147,7 +162,7 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                         <FontAwesomeIcon icon={passwordVisibile ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility} />
                                                     </div>
                                                 </div>
-                                                <div className="input-container-cust">
+                                                {/* <div className="input-container-cust">
                                                     <label htmlFor="confirmPassword" className="input-label-cust">Confirm Password:</label>
                                                     <div className="input-with-icon">
                                                         <FontAwesomeIcon icon={faLock} className="input-icon" />
@@ -155,9 +170,9 @@ const Login = ({ setActiveForm, activeForm, ...props }) => {
                                                         {errors.confirmPassword && <span className="error-message-validationsLogin">{errors.confirmPassword.message}</span>}
                                                         <FontAwesomeIcon icon={passwordVisibile2 ? faEyeSlash : faEye} className="eye-icon customeye" onClick={togglePasswordVisibility2} />
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="input-container-cust">
-                                                    <input type="checkbox" id="agreeTerms" className="agree-terms-checkbox" />
+                                                    <input type="checkbox" id="agreeTerms" className="agree-terms-checkbox"  {...register("agreeTerms", validationRules.agreeTerms)}/>
                                                     <label htmlFor="agreeTerms" className="agree-terms">I agree to the Terms of Service and Privacy Policy.</label>
                                                 </div>
                                                 <div className='p-3 d-flex align-items-center justify-content-center'>
